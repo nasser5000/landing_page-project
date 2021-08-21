@@ -17,14 +17,27 @@
  * Define Global Variables
  *
 */
-
+const fragment = document.createDocumentFragment();
+const sectionList = document.querySelectorAll('section');
 
 /**
  * End Global Variables
  * Start Helper Functions
  *
 */
-
+function createNavItemHTML(id, name){
+    const itemHTML = `<a class ="menu__link" data-id="${id}">${name}</a>`;
+    return itemHTML;
+}
+function isInViewport (elem) {
+    const bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
 
 
 /**
@@ -53,4 +66,3 @@
 // Scroll to section on link click
 
 // Set sections as active
-document.alert("hello")
